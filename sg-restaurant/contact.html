@@ -12,24 +12,130 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
     <link rel="stylesheet" href="styles/restaurantStyles.css" />
     <script src="https://kit.fontawesome.com/898b9ed898.js" crossorigin="anonymous"></script>
+    <style>
+      main {box-sizing: border-box;}
+      #submitButton {background-color: gainsboro; color: black;}
+      .inputText, .inquiry, #addInfo {width: 200px;}
+      .inputLabel {margin-right: 25px;}
+      .required {font-weight: bold;}
+      .formInput {display: flex; justify-content: center; margin: 15px 0; box-sizing: border-box;}
+      .emailDiv {padding-left: 2px;}
+      #emailText {margin-right: 9px;}
+      .email {margin-left: 18px;}
+      .phone {margin-right: 4px;}
+      .inquiryDiv {padding-right: 86px;}
+      #addInfo {margin-right: 118px;}
+      .radioSection {margin-right: 277px;}
+      .checkBoxSection {margin-right: 105px;}
+      /* Media queries */
+      @media screen and (max-width: 768px) {
+        .radioSection {margin-right: 216px; }
+      }
+
+      @media screen and (max-width: 591px) {
+        .formInput {
+          display: block;
+        }
+        .radioSection {margin-right: auto;}
+      }
+
+      
+    </style>
   </head>
   <body>
     <!-- Header section -->
     <header>
-      <div class="jumbotron jumbo-header">
-        <h1 id="header-title">JR Bistro</h1>
-        <h3>New Location Opening Soon!</h3>
-      </div>
-      <nav>
-        <a class="btn btn-primary badge-pill" href="index.html"><i class="fas fa-home"></i></a class>
-        <a class="btn btn-primary badge-pill" href="menuPage.html">Menu</a>
-        <a class="btn btn-primary badge-pill" href="contact.html">Contact Us</a>
+      <h1 id="header-title">JR Bistro</h1>
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="btn btn-primary badge-pill link" href="index.html"><i class="fas fa-home"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary badge-pill link" href="menuPage.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary badge-pill link active" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
     <!-- Main section of page -->
     <main class="container">
-      
+      <div class="row">
+        <div class="col"></div>
+        <form onsubmit="return validateForm()" class="col-lg-10 col-sm-12 form-inline d-block mt-3 mb-3">
+          <div class="form-group formInput">
+            <label class="inputLabel required" for="name">Name:</label c>
+            <input class="inputText" type="text" name="name" id="name" required>
+          </div>
+          <div class="form-group formInput emailDiv">
+            <label class="inputLabel required" id="emailText" for="name">Email:</label>
+            <input class="inputText email" type="email" name="Email" id="Email" required>
+          </div>
+          <div class="form-group formInput">
+            <label class="inputLabel required" for="phone">Phone:</label>
+            <input class="inputText phone" type="text" name="phone" id="phone" required>
+          </div>
+          <div class="form-group formInput inquiryDiv">
+            <label class="inputLabel" for="select">Reason for inquiry:</label>
+            <select class="inquiry" name="inquiry" id="inquiry">
+              <option selected>Catering</option>
+              <option>Private Party</option>
+              <option>Feedback</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group formInput info">
+            <label class="inputLabel" for="addInfo">Additional Information:</label>
+            <textarea name="addInfo" id="addInfo" cols="15" rows="5"></textarea>
+          </div>
+          <div class="radioSection formInput">
+            <label class="inputLabel" for="checkbox">Have you been to the restaurant?</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+              <label class="form-check-label" for="inlineRadio1">No</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+              <label class="form-check-label" for="inlineRadio2">Yes</label>
+            </div>
+          </div>
+          <div class="form-group checkBoxSection formInput">
+            <label class="inputLabel" for="checkBox">Best day to contact you:</label>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">M</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">T</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+              <label class="form-check-label" for="inlineCheckbox3">W</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+              <label class="form-check-label" for="inlineCheckbox4">Th</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+              <label class="form-check-label" for="inlineCheckbox5">F</label>
+            </div>
+          </div>
+          <div class="formInput">
+            <button type="submit" class="btn btn-secondary" id="submitButton">Send Request</button>
+          </div>
+        </form>
+        <div class="col"></div>
+     </div>
     </main>
 
     <!-- Footer -->
@@ -44,5 +150,6 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/contactForm.js"></script>
   </body>
 </html>

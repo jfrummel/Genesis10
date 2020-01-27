@@ -4,17 +4,10 @@ body {
   box-sizing: border-box;
 }
 
-.jumbo-header {
-  background-color: seashell;
-  text-align: center;
-  height: 130px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin-bottom: 0;
-}
-
 #header-title {
+  text-align: center;
   font-family: "Bangers", cursive, sans-serif;
+  padding: 15px 0;
 }
 
 nav {
@@ -22,25 +15,34 @@ nav {
   border-bottom: 1px darkgray solid;
 }
 
-nav a {
+.badge-pill {
+  padding: 5px 25px;
+}
+
+.nav-item a.link {
   margin: 10px 15px;
   font-weight: normal;
 }
 
-nav a:link {
+.nav-item a.link:link {
   color: white;
 }
 
-nav a:hover {
+.nav-item a.link:visited {
+  color: darkblue;
+}
+
+.nav-item a.link:hover {
   font-weight: bold;
 }
 
-nav a:active {
-    color:darkorchid;
+.nav-item a.link:active {
+  color: purple;
 }
 
-nav a:visited {
-  color: pink;
+.homePageMain {
+  background-color: beige;
+  margin: 0;
 }
 
 footer {
