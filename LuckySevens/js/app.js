@@ -6,7 +6,7 @@ let scoresTally = [];
 // Main game function to validate input and run game
 function validateBet() {
   initialBet = document.forms["luckySevens"]["startBet"].value;
-  if (initialBet === "" || initialBet === NaN || initialBet <= 0) {
+  if (initialBet === "" || isNaN(initialBet) || initialBet <= 0) {
     alert("Starting Bet must be greater than 0");
     resetBet();
     return false;
@@ -26,10 +26,10 @@ function resetBet() {
 
 // Resets game and variables
 function gameReset() {
-  resetBet();
   initialBet = 0;
   currentAmount = 0;
   scoresTally = [];
+  resetBet();
 
   window.location.reload(true);
 }
@@ -49,7 +49,6 @@ function playGame() {
     else currentAmount -= 1;
     scoresTally.push(currentAmount);
   }
-  console.log(scoresTally);
   return scoresTally;
 }
 
@@ -61,7 +60,6 @@ function getHighScore() {
       highScore = score;
     }
   }
-  console.log(highScore);
   return highScore;
 }
 
