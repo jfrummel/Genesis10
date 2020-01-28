@@ -1,6 +1,6 @@
 // Global game variables
-let initialBet;
-let currentAmount;
+let initialBet = 0;
+let currentAmount = 0;
 let scoresTally = [];
 
 // Main game function to validate input and run game
@@ -31,7 +31,7 @@ function gameReset() {
   currentAmount = 0;
   scoresTally = [];
 
-  document.location.reload(true);
+  window.location.reload(true);
 }
 
 // Returns total of 2 dice roll
