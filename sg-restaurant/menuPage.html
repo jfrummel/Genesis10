@@ -21,6 +21,11 @@
       .row {padding: 10px 10px;}
       .beveragesTable {width: 400px; margin: auto; border-top: none;}
       tbody tr td {width: 200px;}
+
+      /* Media queries */
+      @media screen and (max-width: 768px) {
+        .beveragesTable {max-width: 100%; height: auto;}
+      }
     </style>
     <!-- End of StyleSheet -->
 
@@ -52,7 +57,7 @@
     <!-- Main section of page -->
 
     <!-- Menu section -->
-    <main class="fluid-container">
+    <main class="container-fluid">
       <div class="row">
         <div class="col-lg-4 col-xs-12 text-center menu-item">
           <h4 class="menu-title">Burger and Fries</h4>
