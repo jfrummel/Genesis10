@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
     <link rel="stylesheet" href="styles/restaurantStyles.css" />
     <script src="https://kit.fontawesome.com/898b9ed898.js" crossorigin="anonymous"></script>
+    <noscript>This site is best viewed with JavaScript enabled</noscript>
+    <!-- Internal StyleSheet -->
     <style>
       main {box-sizing: border-box;}
       #submitButton {background-color: gainsboro; color: black;}
@@ -33,20 +35,17 @@
       }
 
       @media screen and (max-width: 591px) {
-        .formInput {
-          display: block;
-        }
+        .formInput { display: block; justify-items: center;}
         .radioSection {margin-right: auto;}
       }
-
-      
     </style>
+    <!-- End of StyleSheet -->
   </head>
   <body>
     <!-- Header section -->
     <header>
       <h1 id="header-title">JR Bistro</h1>
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -70,18 +69,18 @@
     <main class="container">
       <div class="row">
         <div class="col"></div>
-        <form onsubmit="return validateForm()" class="col-lg-10 col-sm-12 form-inline d-block mt-3 mb-3">
+        <form id="contactForm" onsubmit="return validateForm()" class="col-lg-10 col-sm-12 form-inline d-block mt-3 mb-3">
           <div class="form-group formInput">
             <label class="inputLabel required" for="name">Name:</label c>
-            <input class="inputText" type="text" name="name" id="name" required>
+            <input class="inputText" type="text" name="name" id="name">
           </div>
           <div class="form-group formInput emailDiv">
             <label class="inputLabel required" id="emailText" for="name">Email:</label>
-            <input class="inputText email" type="email" name="Email" id="Email" required>
+            <input class="inputText email" type="email" name="email" id="email">
           </div>
           <div class="form-group formInput">
             <label class="inputLabel required" for="phone">Phone:</label>
-            <input class="inputText phone" type="text" name="phone" id="phone" required>
+            <input class="inputText phone" type="text" name="phone" id="phone">
           </div>
           <div class="form-group formInput inquiryDiv">
             <label class="inputLabel" for="select">Reason for inquiry:</label>
@@ -93,7 +92,7 @@
             </select>
           </div>
           <div class="form-group formInput info">
-            <label class="inputLabel" for="addInfo">Additional Information:</label>
+            <label class="inputLabel align-self-start" for="addInfo">Additional Information:</label>
             <textarea name="addInfo" id="addInfo" cols="15" rows="5"></textarea>
           </div>
           <div class="radioSection formInput">

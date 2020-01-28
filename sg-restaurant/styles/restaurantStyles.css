@@ -1,9 +1,11 @@
+/* Default styles */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Header and Nav */
 #header-title {
   text-align: center;
   font-family: "Bangers", cursive, sans-serif;
@@ -40,10 +42,18 @@ nav {
   color: purple;
 }
 
+/* Main Section */
+
+#jumbo {
+  background-color: blueviolet;
+  color: bisque;
+}
+
 .homePageMain {
   background-color: beige;
-  margin: 0;
 }
+
+/* Footer */
 
 footer {
   border-top: 1px darkgray solid;
@@ -53,4 +63,13 @@ footer {
 
 footer p {
   margin-bottom: 4px;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 768px) {
+  .homePageMain {
+    max-width: 100%;
+    height: auto;
+  }
 }
